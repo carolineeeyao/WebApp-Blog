@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>WebAppBlog</servlet-name>
+		<servlet-class>webapp.WebAppBlogServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebAppBlog</servlet-name>
+		<url-pattern>/webappblog</url-pattern>
+	</servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>webapp.jsp</welcome-file>
+    </welcome-file-list>
+    	<servlet>
+		<servlet-name>showall</servlet-name>
+		<servlet-class>webapp.AddPostServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>showall</servlet-name>
+		<url-pattern>/showall</url-pattern>
+	</servlet-mapping>
+     <servlet>
+        <servlet-name>addpostjsp</servlet-name>
+        <jsp-file>/WEB-INF/addpost.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addpostjsp</servlet-name>
+        <url-pattern>/addpost.jsp</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>showallpostsjsp</servlet-name>
+        <jsp-file>/WEB-INF/showallposts.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>showallpostsjsp</servlet-name>
+        <url-pattern>/showallposts.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addpost</servlet-name>
+        <servlet-class>webapp.WebAppBlogServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addpost</servlet-name>
+        <url-pattern>/addpost</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+		<servlet-name>GAEJCronServlet</servlet-name>
+		<servlet-class>webapp.GAEJCronServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GAEJCronServlet</servlet-name>
+		<url-pattern>/webapp/gaejcronjob</url-pattern>
+	</servlet-mapping>
+	   <servlet>
+        <servlet-name>share</servlet-name>
+        <servlet-class>webapp.ShareServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>share</servlet-name>
+        <url-pattern>/share</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>sharepostsjsp</servlet-name>
+        <jsp-file>/WEB-INF/sharepost.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sharepostsjsp</servlet-name>
+        <url-pattern>/shareposts.jsp</url-pattern>
+    </servlet-mapping>	
+</web-app>
