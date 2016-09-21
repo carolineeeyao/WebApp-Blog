@@ -35,7 +35,7 @@ public class ShareServlet extends HttpServlet {
     		
     		  //TODO
 		      // set the email
-		      String from = "";
+		      String from = "sonal.jain@utexas.edu";
 
 		      String host = "smtp.gmail.com";
 		      Properties properties = System.getProperties();

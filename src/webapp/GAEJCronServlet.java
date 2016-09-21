@@ -44,7 +44,7 @@ public class GAEJCronServlet extends HttpServlet {
 
 		      //TODO
 		      //enter email id
-		      String from = "";
+		      String from = "sonal.jain@utexas.edu";
 
 		      String host = "smtp.gmail.com";
 
@@ -71,6 +71,8 @@ public class GAEJCronServlet extends HttpServlet {
 
 
 		         Transport.send(message);
+		         
+		         
 			}
 
 		}
