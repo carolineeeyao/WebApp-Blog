@@ -3,6 +3,6 @@
   <cron>
     <url>/webapp/gaejcronjob</url>
     <description>Sends daily email</description>
-    <schedule>every day 17:00</schedule>
+    <schedule>every 24 hours</schedule>
   </cron>
 </cronentries>

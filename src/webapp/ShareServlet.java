@@ -1,6 +1,7 @@
 package webapp;
  
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -28,6 +29,9 @@ public class ShareServlet extends HttpServlet {
  
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
                 throws IOException {
+
+    	sendEmail();
+    	
     	try{
     		String to = req.getParameter("content");
     		
@@ -35,13 +39,16 @@ public class ShareServlet extends HttpServlet {
     		
     		  //TODO
 		      // set the email
-		      String from = "sonal.jain@utexas.edu";
+		      String from = "webappblogsc@gmail.com";
 
 		      String host = "smtp.gmail.com";
-		      Properties properties = System.getProperties();
+		      //Properties properties = System.getProperties();
 
+		      Properties properties = new Properties();
+		      Session session = Session.getDefaultInstance(properties, null);
+		      
 		      properties.setProperty("mail.smtp.host", host);
-		      Session session = Session.getDefaultInstance(properties);
+		      //Session session = Session.getDefaultInstance(properties);
 		      MimeMessage message = new MimeMessage(session);
 		      message.setFrom(new InternetAddress(from));
 
@@ -51,21 +58,41 @@ public class ShareServlet extends HttpServlet {
 		     message.setText("Hey check out this amazing blog I found!");
 
 	         Transport.send(message);
+	         //System.out.println("message sent");
 	         
     	}
     	catch(AddressException e) {
-					
+					e.printStackTrace();
 		}
 		catch(MessagingException e) {
-			
+			e.printStackTrace();
 		}
 		catch (Exception ex) {
-						
+						ex.printStackTrace();
 		}
         resp.sendRedirect("/webapp.jsp");
     }
-	
-	
+    
+    public static void sendEmail()
+    {
+    	Properties props = new Properties();
+    	Session session = Session.getDefaultInstance(props, null);
+
+    	try {
+    	  Message msg = new MimeMessage(session);
+    	  msg.setFrom(new InternetAddress("webappblogsc@gmail.com", "Example.com Admin"));
+    	  msg.addRecipient(Message.RecipientType.TO,
+    	                   new InternetAddress("sonaljain240@yahoo.com", "Mr. User"));
+    	  msg.setSubject("Your Example.com account has been activated");
+    	  Transport.send(msg);
+    	} catch (AddressException e) {
+    	  // ...
+    	} catch (MessagingException e) {
+    	  // ...
+    	} catch (UnsupportedEncodingException e) {
+    	  // ...
+    	}
+    }
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
               throws IOException {
