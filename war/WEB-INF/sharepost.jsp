@@ -59,7 +59,7 @@ to include your name with greetings you post.
 <table style="width:80%; margin:auto">
 <tr>
 <td>
- <name>Share this post with a friend! Enter their email!</name>
+ <name>Share our awesome blog with a friend! Enter their email!</name>
  </br>
  <form action="/share" method="post">
    <textarea name="content" rows="3" cols="60"></textarea>
