@@ -7,14 +7,19 @@
  
 <html>
 <head>
+ <link rel="stylesheet" href="bootstrap.css"/>
+ 	<link rel="stylesheet" href="main.css"/>
+ 	
+ 		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
  <Title>Add Post</Title>
  <head/>
 
   <body>
   
-  <table>
+  <table style="width:80%; margin:auto">
   <tr>
-  <td>
+  <td align = right>
   <%
     UserService userService = UserServiceFactory.getUserService();
     User user = userService.getCurrentUser();
@@ -36,22 +41,22 @@ to include your name with greetings you post.
 	</tr>
 	</td>
 	
-  <table>
+  <table style="width:80%; margin:auto">
   <tr>
-  <td>
-  <img src="pic.jpg" alt="Picture" style="width:100%;height:100px">
-  </td>
+  	<td>
+  <img src="meow header.png" alt="Picture" style="width:100%;height:200px">
+  	</td>
   </tr>
   <tr>
   <td>
-  <header align = center><b><font size = "20">EE461L Blog</font></b></header>
+  <header align = center><h1>A Cute Cat Blog</h1></header>
   </td>
   </tr>
   </table>
  
 
 <br>
-<table>
+<table style="width:80%; margin:auto">
 <tr>
 <td>
  <name> Enter the title of your post!  </name>
@@ -64,11 +69,11 @@ to include your name with greetings you post.
    <textarea name="content" rows="3" cols="60"></textarea>
    </br>
       <input type="hidden" name="guestbookName" value="${fn:escapeXml("default")}"/>
-      <input type="submit" value="Create Post" />
+      <input type="submit" value="Create Post" type="button" class="btn btn-secondary"/>
 
   </form> 
  <form action="/webapp.jsp">
-    <input type="submit" value="Cancel"  />
+    <input type="submit" value="Cancel" type="button" class="btn btn-secondary" />
   </form>
   
 </td>

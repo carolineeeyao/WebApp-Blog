@@ -67,7 +67,7 @@ public class GAEJCronServlet extends HttpServlet {
 		         
 		         //TODO
 		         //set the message
-		         message.setText("This is actual message");
+		         message.setText("	This is actual message");
 
 
 		         Transport.send(message);

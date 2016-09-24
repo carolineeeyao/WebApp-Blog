@@ -16,7 +16,11 @@
  
 <html>
   <head>
-	  
+	<link rel="stylesheet" href="bootstrap.css"/>
+		<link rel="stylesheet" href="main.css"/>
+		
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   </head>
  
   <body>
@@ -33,16 +37,16 @@
     	pageContext.setAttribute("user", user);
  %>
 
-	<table>
+	<table style="width:80%; margin:auto">
 	<tr>
 	<td>
     <form action="/addpost.jsp" method="post">
-    	<input type="submit" value="Add Post"/>
+    	<input type="submit" value="Add Post" type="button" class="btn btn-secondary"/>
     </form>
     </td>
     <td>
    <form action="/showallposts.jsp" method="post">
-      <input type="submit" value="Show More"/>
+      <input type="submit" value="Show More" type="button" class="btn btn-secondary"/>
    </form>
     </td>
  <%
@@ -63,13 +67,13 @@
 %>   	
 		<td>
 	    <form action="/webappblog" method="get">
-	     <input type="submit" value="Suscribe" />
+	     <input type="submit" value="Subscribe" type="button" class="btn btn-secondary"/>
 	    </form>
 	    </td>
 	    
     <td>
 		<form action="/shareposts.jsp" method="post">
-	    <input type="submit" value="Share" />
+	    <input type="submit" value="Share" type="button" class="btn btn-secondary"/>
 	    </form>
 	</td>	
 
@@ -78,19 +82,19 @@
 %>
    		<td>
 	    <form action="/showall" method="post">
-	    <input type="submit" value="Unsuscribe" />
+	    <input type="submit" value="Unsubscribe" type="button" class="btn btn-secondary" />
 	    </form>
 	    </td>
     <td>
 		<form action="/shareposts.jsp" method="post">
-	    <input type="submit" value="Share" />
+	    <input type="submit" value="Share" type="button" class="btn btn-secondary"/>
 	    </form>
 	</td>	
 
 <%
 		}
 %>
-<td>
+<td align = right>
    Hello, ${fn:escapeXml(user.nickname)}! (You can
 <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)
   </td>
@@ -99,9 +103,9 @@
 <%
     } else {
 %>
-  <table>
+  <table style="width:80%; margin:auto;" >
   <tr>
-  <td>
+  <td align = right>
   Hello!
 <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 to post about your topic.
@@ -113,15 +117,15 @@ to post about your topic.
 %>
 
   
-  <table>
+  <table style="width:80%; margin:auto">
   <tr>
   	<td>
-  <img src="pic.jpg" alt="Picture" style="width:100%;height:100px">
+  <img src="meow header.png" alt="Picture" style="width:100%;height:200px">
   	</td>
   </tr>
   <tr>
   <td>
-  <header align = center><b><font size = "20">EE461L Blog</font></b></header>
+  <header align = center><h1>A Cute Cat Blog</h1></header>
   </td>
   </tr>
   </table>
@@ -149,7 +153,7 @@ to post about your topic.
 	            if (greeting.getProperty("user") != null) {
 	                pageContext.setAttribute("greeting_user",greeting.getProperty("user"));
 	                %>
-	                <table>
+	                <table style="width:80%; margin:auto; " class="comment">
 	                <tr>
 	                	<td>
 	                	On ${fn:escapeXml(greeting_date)} <b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:
@@ -159,14 +163,14 @@ to post about your topic.
 		             %>
 		            <tr>
 		            	<td>
-		           			<b>${fn:escapeXml(greeting_name)}</b>
+		           			 <h2>Title: ${fn:escapeXml(greeting_name)}</h2>
 		           		</td>
 		           	</tr>
 		            </br>
 		            <%           
 		            %>
 		            <tr>
-		            	<td>
+		            	<td class="content">
 		            		${fn:escapeXml(greeting_content)}
 		            	</td>
 		            </tr>

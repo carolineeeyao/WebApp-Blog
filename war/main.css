@@ -1,0 +1,33 @@
+td {
+	background-color:#fff;
+	padding:30px;
+	margin:10px;
+}
+
+td.content{
+	background-color:#f1f1f1;
+	margin:30px;
+	text-align:center;
+}
+
+table.comment{
+	transition: all 0.5s ease;
+}
+
+table.comment:hover{
+	 box-shadow: 0px 0px 10px #333;
+}
+
+body{
+	font-family:"helvetica", sans-serif;
+}
+
+h1{
+	font-family:"Courgette" !important;
+	font-size:50px;
+}
+
+h2{
+	font-family: 'Comfortaa', cursive;
+	font-size: 30px;
+}
